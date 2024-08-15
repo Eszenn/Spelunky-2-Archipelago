@@ -119,5 +119,5 @@ def can_access_mothership(state: CollectionState, player: int) -> bool:
 
 def can_access_sunken_city(state: CollectionState, player: int) -> bool:
     return ((has_royalty(state, player) and has_weapon(state, player) and state.has_all(["Tablet of Destiny", "Ushabti"], player))
-            and (state.can_reach("Neo Babylon", "Region", player) and state.has("Sunken City", player))
-            or state.has("Progressive World Unlock", player, 6))
+            and ((state.can_reach("Neo Babylon", "Region", player) and state.has("Sunken City", player))
+            or state.has("Progressive World Unlock", player, 6)))
